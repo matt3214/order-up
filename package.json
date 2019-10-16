@@ -3,20 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ionic/core": "^4.11.1",
+    "@ionic/react": "^4.11.1",
+    "@ionic/react-router": "^4.11.1",
     "@types/jest": "24.0.19",
     "@types/node": "12.11.1",
-    "@types/react": "16.9.9",
-    "@types/react-dom": "16.9.2",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-router": "^5.1.2",
+    "@types/react-router-dom": "^5.1.0",
+    "cross-env": "^6.0.3",
+    "electron-is-dev": "^1.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "ionic": "^5.4.4",
+    "ionic-react": "^0.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.4"
+    "typescript": "^3.6.4"
   },
+  "description": "<your project description>",
+  "author": "<author of app>",
+  "build": {
+    "appId": "<com.your_app>"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "clean": "rm -rf dist/ && rm -rf build/",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently --kill-others --success first --names \"BACKEND,FRONTEND\" \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +56,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0",
+    "wait-on": "^3.3.0"
   }
 }
