@@ -8,9 +8,6 @@ import Home from './pages/Home';
 import '@ionic/react/css/core.css';
 
 
-
-
-
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
