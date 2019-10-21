@@ -40,7 +40,7 @@
     "clean": "rm -rf dist/ && rm -rf build/",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently --kill-others --success first --names \"BACKEND,FRONTEND\" \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently --kill-others --success first --names \"BACKEND,FRONTEND\" \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\" && exit"
   },
   "eslintConfig": {
     "extends": "react-app"
