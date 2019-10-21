@@ -24,12 +24,11 @@
     "react-scripts": "3.2.0",
     "typescript": "^3.6.4"
   },
-  "description": "<your project description>",
-  "author": "<author of app>",
+  "description": "electron-react-ionic template app",
+  "author": "Matthew Duffy",
   "build": {
     "appId": "<com.your_app>"
   },
-  "homepage": "./",
   "main": "public/electron.js",
   "scripts": {
     "react-start": "react-scripts start",
