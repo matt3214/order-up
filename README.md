@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The project contains the structure necessary for a barebones react app.
+
+Ionic is also included in the packages.json file and can be imported and used with React.
+
 Start by running yarn in the root directory to install all packages.
 
 ## Available Scripts
